@@ -167,7 +167,9 @@ func (r *AliyunDrive) prepareHeaders(ctx context.Context, req *RawRequestReq) (m
 	if req.Method == http.MethodPost {
 		headers["Content-Type"] = "application/json; charset=utf-8"
 	}
-	if token, _ := r.store.Get(ctx, ""); token != nil && token.AccessToken != "" {
+	token, _ := r.store.Get(ctx, "")
+	r.logger.Log(ctx, LogLevelDebug, "token=%+v", token)
+	if token != nil && token.AccessToken != "" {
 		headers["Authorization"] = "Bearer " + token.AccessToken
 	}
 
