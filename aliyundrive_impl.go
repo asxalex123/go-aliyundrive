@@ -21,7 +21,7 @@ import (
 
 	"github.com/chyroc/gorequests"
 
-	"github.com/chyroc/go-aliyundrive/internal/helper_config"
+	"github.com/asxalex123/go-aliyundrive/internal/helper_config"
 )
 
 type AliyunDrive struct {

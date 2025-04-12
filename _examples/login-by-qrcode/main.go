@@ -20,7 +20,7 @@ import (
 
 	"github.com/davecgh/go-spew/spew"
 
-	"github.com/chyroc/go-aliyundrive"
+	"github.com/asxalex123/go-aliyundrive"
 )
 
 // 扫码登录
