@@ -46,7 +46,7 @@ func (r *AuthService) LoginByQrcode(ctx context.Context, request *LoginByQrcodeR
 		if err != nil {
 			r.cli.log(ctx, LogLevelError, "get user failed, then get store failed: %s", err)
 		} else if token.RefreshToken != "" {
-			refreshTokenResp, err := r.RefreshToken(ctx, &RefreshTokenReq{RefreshToken: token.RefreshToken})
+			refreshTokenResp, err := r.RefreshToken(ctx, &RefreshTokenReq{RefreshToken: token.RefreshToken, GrantType: "refresh_token"})
 			if err != nil {
 				r.cli.log(ctx, LogLevelError, "get user failed, then refresh token failed: %s", err)
 			} else if refreshTokenResp.RefreshToken != "" {

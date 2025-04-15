@@ -26,7 +26,7 @@ func (r *AuthService) RefreshToken(ctx context.Context, request *RefreshTokenReq
 		Scope:  "Auth",
 		API:    "RefreshToken",
 		Method: http.MethodPost,
-		URL:    "https://api.aliyundrive.com/token/refresh",
+		URL:    "https://auth.aliyundrive.com/v2/account/token",
 		Body:   request,
 	}
 	resp := new(RefreshTokenResp)
@@ -38,6 +38,7 @@ func (r *AuthService) RefreshToken(ctx context.Context, request *RefreshTokenReq
 }
 
 type RefreshTokenReq struct {
+	GrantType    string `json:"grant_type"`
 	RefreshToken string `json:"refresh_token"`
 }
 
