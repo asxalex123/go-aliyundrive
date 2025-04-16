@@ -78,7 +78,7 @@ func (r *AliyunDrive) rawRequest(ctx context.Context, req *RawRequestReq, resp i
 		return response, fmt.Errorf(msg)
 	}
 
-	r.log(ctx, LogLevelDebug, "got response body: %s", response.Body)
+	// r.log(ctx, LogLevelDebug, "got response body: %s", response.Body)
 	r.log(ctx, LogLevelDebug, "%s#%s success, status_code: %d, response: %s", req.Scope, req.API, response.StatusCode, "TODO")
 
 	return response, nil
